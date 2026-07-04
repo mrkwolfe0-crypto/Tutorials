@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* I forgot to put the * before the { and had error indicators hoplding me back until I remembered from another tutorial that this meant it was universal, and I fixed ity, noting this moving forward.*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/*As I learned doing my Quiz App for Cera Ve .header or .logo is a means to referencing the class from the html file, dictating hpow they will be styled.*/
+.header {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; /*Makes the stipe span the width of the device viewing the webpage*/
+    padding: 20px 100px; /*This line applies 20px of padding to the top and bottom of an element and 100px of padding to the left and right sides*/
+    background: pink; /*The background color will alter the top stripe at the top of the page*/
+    display: flex; /*This activates the Flexbox layout engine, instantly turning your header into a flexible container so its children (the Logo and the Navbar) can sit side-by-side instead of stacking vertically.*/
+    justify-content: space-between; /*This acts like an automatic magnet, pushing your Logo all the way to the far left and your Navbar links all the way to the far right, utilizing 100% of the available room cleanly.*/
+    align-items: center; /*This vertically centers your logo text and navigation links perfectly along the horizontal axis, preventing anything from looking misaligned or cut off.*/
+    z-index:99; /*This controls the "3D depth" stack of your webpage.*/
+}
+
+.logo {
+    font-size: 32px;
+    color: #efff;
+    text-decoration: none;
+    font-weight: 700;
+    pointer-events: none; /*Makes the logo unclickable*/
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #efff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right:40px; /*Adds space between each link.*/
+}
+
+.navbar .btnLogin-popup{
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color:#efff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.navbar .btnLogin-popup::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    color: #fff;
+}
