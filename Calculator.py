@@ -80,6 +80,8 @@ def check_zero_decimal(num):
     #Discovered resolving the graphical glitch of the label expanfing now meant the numbers would expand beyond the label area. So like on a real calculator I had to limit it, placing it here to test if this is the best place to put it. Had it in the area where I determined the "0123456789" buttons but it was not universal and square root of 5 still broke the parameter of 8 characters. Hopefully here makes it universal for all of the code.
     #I  had to make a new variable to then index the new variable to the first 8 characters to ensure the numbers didn't bypass the labels length.
     return num_str
+    #Please remember not to put () at the end of the function name when calling it as it will return the function object instead of the value returned by the function. This is a common mistake that can lead to unexpected behavior in your code. But I did that and well had TypeError: 'str' object is not callable.
+    
     
     #This function is used to determine what happens when a button is clicked. It takes in the value of the button that was clicked and performs the appropriate action based on that value.
 
