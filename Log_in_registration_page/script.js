@@ -24,6 +24,6 @@ btnPopup.onclick = () => {
 
 iconClose.onclick = () => {
     wrapper.classList.remove('active-popup');
-    wrapper.classList.remove('activer');
+    wrapper.classList.remove('active');
 
 };
