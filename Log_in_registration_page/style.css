@@ -93,15 +93,58 @@
     z-index: 100;
     display: flex;
     align-items: center;
-    justify-content: center; /*In the tutorial he aligned more to the left almost spanning accross the box, in mine they are centered. Unsure what I did wrong here*/
+    justify-content: space-between; /*In the tutorial he aligned more to the left almost spanning accross the box, in mine they are centered. Unsure what I did wrong here*/
     flex-direction: column;/*Puts the login with Google and Facebook underneeth the Don't have an account segment*/
-    padding: 0 40px /*Adds padding to the buttons in the login section.*/
+    padding: 0 40px; /*Adds padding to the buttons in the login section.*/
+    opacity:0;
+    pointer-events: none;
+}
+
+.wrapper.active-popup {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background:#efff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+}
+
+.icon-close i {
+    font-size: 32px;
+    color:#333;
+
 }
 
 .wrapper .logreg-box {
     width: 100%;
+    padding-top: 80px; /* Pushes the form text cleanly below your navigation links! */
     /*background: pink;*/
     /*Makes the box around the log in and password sections the color set*/
+}
+
+.wrapper .form-box.login {
+    display: block;
+} 
+
+.wrapper.active .form-box.login {
+    display: none;
+}
+.wrapper.active .form-box.register {
+    display: block;
+}
+
+.wrapper .form-box.register {
+    display: none;
 }
 
 .logreg-box .logreg-title {
@@ -155,6 +198,8 @@
 .input-box input:focus~label,
 .input-box input:valid~label {
     top: -5px;
+    font-size: 12px;
+    transform: translateY(0);
 } /*This will shift the email and password titles out of the way of the users entry*/
 
 
@@ -234,6 +279,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 100%;
 } /*In his video this sets the login with Google and Facebook to center, I messed up somewhere and somehow it centered with how I had the code*/
 
 .media-options a {
@@ -252,12 +298,12 @@
     transition: .5s /*For the underline mouse hover over effect.*/
 }/*This is starting the process of stylizing the Google and Facebook button. ANd unlike in his video, his buttone extend the whole login box, mine do not the stylized button just covers the text, I verified I have done as he did.*/
 
-.media-option a:hover {
+.media-options a:hover {
     background: rgba(255,255,255,.1);
 }
 
 .media-options a i {
-    font-size 22px;
+    font-size: 22px;
     margin: 0 8px 1.5px 0;
 } /*Font size of the log in with options.*/
 
