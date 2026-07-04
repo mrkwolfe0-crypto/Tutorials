@@ -14,7 +14,7 @@
     left: 0;
     width: 100%; /*Makes the stipe span the width of the device viewing the webpage*/
     padding: 20px 100px; /*This line applies 20px of padding to the top and bottom of an element and 100px of padding to the left and right sides*/
-    background: pink; /*The background color will alter the top stripe at the top of the page*/
+    background: transparent; /*The background color will alter the top stripe at the top of the page*/
     display: flex; /*This activates the Flexbox layout engine, instantly turning your header into a flexible container so its children (the Logo and the Navbar) can sit side-by-side instead of stacking vertically.*/
     justify-content: space-between; /*This acts like an automatic magnet, pushing your Logo all the way to the far left and your Navbar links all the way to the far right, utilizing 100% of the available room cleanly.*/
     align-items: center; /*This vertically centers your logo text and navigation links perfectly along the horizontal axis, preventing anything from looking misaligned or cut off.*/
@@ -38,6 +38,7 @@
 }
 
 .navbar .btnLogin-popup{
+    position: relative;
     background: transparent;
     border: none;
     outline: none;
@@ -50,7 +51,29 @@
 .navbar .btnLogin-popup::before {
     content: '';
     position: absolute;
+    left: 0;
+    bottom: -4px;
     width: 100%;
     height: 2px;
-    color: #fff;
+    background: #fff;
+    opacity: .85;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('background.png') no-repeat; /*Remember not to use "" when encapsulating the url use''*/
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 450px;
+    height: 100%;
+    background: yellowgreen;
 }
