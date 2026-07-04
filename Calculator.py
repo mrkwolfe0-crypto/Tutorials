@@ -74,7 +74,12 @@ def check_zero_decimal(num):
     #This function checks if the number is a decimal and if it is, it checks if the number is 0. If it is, it returns True, otherwise it returns False. If the number is not a decimal, it returns False. Replaces the str(result) in if vallue == "+/-" label segment.
     if num % 1 == 0:
         num = int(num)
-    return str(num)
+    num_str = str(num)
+    if len(num_str) > 8:
+        num_str = num_str[:8]
+    #Discovered resolving the graphical glitch of the label expanfing now meant the numbers would expand beyond the label area. So like on a real calculator I had to limit it, placing it here to test if this is the best place to put it. Had it in the area where I determined the "0123456789" buttons but it was not universal and square root of 5 still broke the parameter of 8 characters. Hopefully here makes it universal for all of the code.
+    #I  had to make a new variable to then index the new variable to the first 8 characters to ensure the numbers didn't bypass the labels length.
+    return num_str
     
     #This function is used to determine what happens when a button is clicked. It takes in the value of the button that was clicked and performs the appropriate action based on that value.
 
@@ -102,12 +107,13 @@ def button_click(value):
                 A = label["text"]
                 label["text"] = "0"
                 B = "0"
-                #This ensures after preesing anumber and then a operaton the pressing of another operation like division then addition means you changed the operation sought to be done.
+                #This ensures after preesing anumber and then a operaton the pressing of another operation like division then addition means you changed the operation sought to be done. 
             operator = value
     elif value in top_symbols:
         if value == "AC":
             clear_all()
-            #Messing around to see how the code works I moved the label["text"] = "0" into the clear_all function to see if it would still reliable execute.
+            label["text"] = "0"
+            #At first I put this in the clear_all() function but then I realised that it would be better to have it here as it is more specific to the AC button. The clear_all() function is used to reset the values of A, B and operator to their default values. The label["text"] = "0" is used to reset the label to 0. Meaning it would reset the labels after pressing the operation desired where I wanted to perform the operator it cleared the entry.
         if value == "+/-":
             #Take the text label convert it to a float, multiply by -1, convert it back to a string and set the label text to that value.
             result = float(label["text"])*-1
@@ -119,11 +125,15 @@ def button_click(value):
         if value == ".":
             if value not in label["text"]:
                 label["text"] += value
+        elif value == "√":
+            result = float(label["text"])**0.5
+            label["text"] = check_zero_decimal(result)
         elif value in "0123456789":
             if label["text"] == "0":
                 label["text"] = value #This replaces the 0 with the value of the button
             else:
                 label["text"] += value
+        
 """
 This segment ensures that the user cannot enter 5.....4 as only one decimal point should be allowed, this is not data entry for IP addresses or other areas where more than one decimal is needed. The code checks if the value is a decimal point and if it is not already in the label text, it adds it to the label text. This prevents multiple decimal points from being entered.
 if value == ".":
