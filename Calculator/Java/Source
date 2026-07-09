@@ -1,0 +1,33 @@
+Java Calculator. In this tutorial, you will learn how to code a calculator using java awt/swing graphics.
+
+Throughout the tutorial, you will learn how to create a gui (graphical user interface) for the calculator, style the buttons to resemble the iphone calculator, add numbers to a display, and evaluate different  mathematical expressions through button clicks.
+
+    String[] buttonValues = {
+        "AC", "+/-", "%", "÷", 
+        "7", "8", "9", "×", 
+        "4", "5", "6", "-",
+        "1", "2", "3", "+",
+        "0", ".", "√", "="
+    };
+    String[] rightSymbols = {"÷", "×", "-", "+", "="};
+    String[] topSymbols = {"AC", "+/-", "%"};
+
+
+Setup Java with Visual Studio Code: 
+   • How to set up Java in Visual Studio Code  
+
+Code: https://github.com/ImKennyYip/calcula...
+
+Website: https://www.kennyyipcoding.com/
+
+Java Game Programming Projects Playlist:
+   • Java Game Programming Tutorials  
+
+JavaScript Game Programming Projects Playlist:
+   • JavaScript Game Programming Tutorials  
+
+Subscribe for more coding tutorials 😄!
+
+⭐ If you enjoyed the tutorial and would like to support the channel, you can do shere 💖: https://buymeacoffee.com/kennyyipcoding
+
+https://www.youtube.com/watch?v=jQo6n-i6wpo&t=25s
