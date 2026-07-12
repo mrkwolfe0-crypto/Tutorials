@@ -3,3 +3,4 @@ public class App {
         Calculator calculator = new Calculator();
     }
 }
+//Run this to run the app not the calculator.java file
