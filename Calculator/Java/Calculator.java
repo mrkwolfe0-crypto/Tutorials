@@ -8,6 +8,11 @@ public class Calculator {
      //This is for the window, the creator often names his window board
     int boardWidth = 360;
     int boardHeight = 540;
+
+    Color customLightGray = new Color(212, 212, 210);
+    Color customDarkGray = new Color(82,80,80);
+    Color customBlack = new Color(28,28,28);
+    Color customOrange = new Color(255,149,0);
     
     //Create the window
     JFrame frame = new JFrame("Calculator");
