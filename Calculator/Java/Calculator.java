@@ -9,6 +9,7 @@ public class Calculator {
     int boardWidth = 360;
     int boardHeight = 540;
 
+    //These are the default colors of how a calculator is presented in Mac Operating system.
     Color customLightGray = new Color(212, 212, 210);
     Color customDarkGray = new Color(82,80,80);
     Color customBlack = new Color(28,28,28);
