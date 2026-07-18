@@ -39,6 +39,7 @@ public class Calculator {
     JFrame frame = new JFrame("Calculator");
 
     //This section are the variables to track and enable the calculation state.
+    //Refer to the python code that set the callculation area plus four to the left and right than colored it black and set 0 to be on the right not default center.
     String a = "0";
     String operator = null;
     String b = null;
