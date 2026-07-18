@@ -36,18 +36,27 @@ public class Calculator {
     
 
     //Creates the window
-    JFrame frame = new JFrame("Calculator");
-
     //This section are the variables to track and enable the calculation state.
-    //Refer to the python code that set the callculation area plus four to the left and right than colored it black and set 0 to be on the right not default center.
-    String a = "0";
-    String operator = null;
-    String b = null;
+        //Refer to the python code that set the callculation area plus four to the left and right than colored it black and set 0 to be on the right not default center.
+        /*frame = tkinter.Frame(window)
+        label = tkinter.Label(frame, text = "0", 
+                            font = ("Arial", 45), 
+                            background = black, 
+                            foreground = white,
+                            anchor = "e",
+                            width = column_count)
+        #width = column_count stops the calculator window from expanding as more numbers populate the claculation area that the label enables to be displayed. Since the buttons do not scale the expansion could lead to graphical issues.
+        #label.pack() */
     /*#This is to set the values of A, B and the operator to be used in the calculation. The operator is set to None as it will be set when the user clicks on one of the operator buttons. A and B are set to 0 and None respectively as they will be set when the user clicks on a number button.
     #A+B, A-B, A*B, A/B
     A=0
     operator= None
     B=None */
+    JFrame frame = new JFrame("Calculator");   
+    String a = "0";
+    String operator = null;
+    String b = null;
+    
 
 
     //Constructor, the layout and panel configurations.
