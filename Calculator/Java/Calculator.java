@@ -114,20 +114,24 @@ public class Calculator {
                         //For my sanity this is to determine the right side symbols operators and equal.
                         //DOn't forget the () around buttonValues, operator.equals.
                         //If done right the obj: will appear before the designated button being programmed.
-                        if (buttonValues.equals("=")){
+                        if (buttonValue.equals("=")){
                             if (a != null) {
                                 b = displayLabel.getText();
                                 double numA = Double.parseDouble(a);
                                 double numB = Double.parseDouble(b);
-                                if (operator.equals("+")) {
-                                    //done right anObject auto fills in.
-                                    displayLabel.setText(removeZeroDecimal (numA + numB));
-                                } else if (operator.equals("-")) {
-                                        displayLabel.setText(removeZeroDecimal (numA - numB));
-                                } else if (operator.equals("x")) {
-                                        displayLabel.setText(removeZeroDecimal (numA * numB));
-                                } else if (operator.equals("/")) {
-                                        displayLabel.setText(removeZeroDecimal (numA / numB));
+                                switch (operator) {
+                                    case "+":
+                                        displayLabel.setText(removeZeroDecimal(numA + numB));
+                                        break;
+                                    case "-":
+                                        displayLabel.setText(removeZeroDecimal(numA - numB));
+                                        break;
+                                    case "x":
+                                        displayLabel.setText(removeZeroDecimal(numA * numB));
+                                        break;
+                                    case "/":
+                                        displayLabel.setText(removeZeroDecimal(numA / numB));
+                                        break;
                                 }
                                 clearAll();
                                 } //This who section was to determine the behavior of the operators and remove the floating decimal point assuming the following number is a 0 and not a number greater than 0.
@@ -144,8 +148,8 @@ public class Calculator {
                             //AC, +/-, %
                             if (buttonValue.equals("AC")) {
                                 clearAll();
-                            } else if (buttonValue.equals("+/=")) {
-                                Double.parseDouble(displayLabel.getText());
+                            } else if (buttonValue.equals("+/-")) {
+                                double numDisplay = Double.parseDouble(displayLabel.getText());
                                 numDisplay *= -1;
                                 displayLabel.setText(removeZeroDecimal(numDisplay));
                             } else if (buttonValue.equals("%")) {
@@ -158,7 +162,7 @@ public class Calculator {
                             //When launching the calc at this point I noticed just like the python version, the numbers overflowed the calculation screen area. It is all gray not the Apple calc color scheme yet for some reason.
                             if (buttonValue.equals(".")) {
                                 if (!displayLabel.getText().contains(buttonValue)) {
-                                    displayLabel.setText(display.getText() + buttonValue);
+                                    displayLabel.setText(displayLabel.getText() + buttonValue);
                                 }
                             } else if ("0123456789".contains(buttonValue)) {
                                 if (displayLabel.getText().equals("0")) {
@@ -182,7 +186,7 @@ public class Calculator {
     } //Rhyming with the def clear_all(): in the python variant.
 
         //def check_zero_decimal(num):
-    String remmoveZeroDecimal(double numDisplay) {
+    String removeZeroDecimal(double numDisplay) {
         if (numDisplay % 1 == 0) {
             return Integer.toString((int) numDisplay);
         } else {
