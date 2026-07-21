@@ -31,7 +31,7 @@ public class Calculator {
 
     //Plays out just like the python variant but instead of using [] to define the associated symbols it is assigned a string where from my understanding string in Python is assumed, and the symbols are contained in the {} in Java vs Python with []. Is {} doing for Java what [] does for Python and define lists?
     //From a functional standpoint,both ⁠{}⁠ in this specific Java context and ⁠[]⁠ in Python serve the exact same primary purpose for a programmer: they let you create a collection of items all at once in a single line of code.
-    String[] rightSymbols = {"/", "x", "-", "="};
+    String[] rightSymbols = {"/", "x", "+", "-", "="};
     String[] topSymbols = {"AC", "+/-", "%"};
     
 
@@ -102,7 +102,10 @@ public class Calculator {
             (Arrays.asList(rightSymbols).contains(buttonValue)) {
                 button.setBackground(customOrange);
                 button.setForeground(Color.white);
-            } //When I ran it to test the buttons did not populate, I must need to continue to make them appear.
+            } else {
+                button.setBackground(customDarkGray);
+                button.setForeground(Color.white);
+            }
             buttonsPanel.add(button);
             //Next section works on the listener for the buttons.
             //Talk about nested loops and arrays wth
@@ -114,26 +117,23 @@ public class Calculator {
                         //For my sanity this is to determine the right side symbols operators and equal.
                         //DOn't forget the () around buttonValues, operator.equals.
                         //If done right the obj: will appear before the designated button being programmed.
-                        if (buttonValue.equals("=")){
-                            if (a != null) {
+                        if (buttonValue.equals("=")) {
+                            if (a != null && operator !=null) {
                                 b = displayLabel.getText();
                                 double numA = Double.parseDouble(a);
                                 double numB = Double.parseDouble(b);
-                                switch (operator) {
-                                    case "+":
-                                        displayLabel.setText(removeZeroDecimal(numA + numB));
-                                        break;
-                                    case "-":
-                                        displayLabel.setText(removeZeroDecimal(numA - numB));
-                                        break;
-                                    case "x":
-                                        displayLabel.setText(removeZeroDecimal(numA * numB));
-                                        break;
-                                    case "/":
-                                        displayLabel.setText(removeZeroDecimal(numA / numB));
-                                        break;
+
+                                if (operator.equals("+")) {
+                                    displayLabel.setText(removeZeroDecimal(numA + numB));
+                                } else if (operator.equals("-")) {
+                                    displayLabel.setText(removeZeroDecimal(numA - numB));
+                                } else if (operator.equals("x")) {
+                                    displayLabel.setText(removeZeroDecimal(numA * numB));
+                                } else if (operator.equals("/")) {
+                                    displayLabel.setText(removeZeroDecimal(numA / numB));
                                 }
                                 clearAll();
+
                                 } //This who section was to determine the behavior of the operators and remove the floating decimal point assuming the following number is a 0 and not a number greater than 0.
                                 //Is this equal to the function I had to make in Python def check_zero_decimal(num): that removed the decimal after the conversion from number to string to number for the +/- function of the calculator.
                             }else {
