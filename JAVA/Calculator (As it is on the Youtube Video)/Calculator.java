@@ -1,4 +1,3 @@
-//Source:https://youtu.be/jQo6n-i6wpo?is=lGaybv5gFnrdi2wj
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Arrays;
@@ -57,6 +56,7 @@ public class Calculator {
     String operator = null;
     String b = null;
     JFrame frame = new JFrame("Calculator");
+
     public Calculator() {
         // Layout and panels configuration
         frame.setSize(boardWidth, boardHeight);
@@ -92,7 +92,6 @@ public class Calculator {
             button.setFocusable(false); //Removes the square around the values in the button.
             button.setBorder(new LineBorder(customBlack)); //Border around the buttons.
             buttonsPanel.add(button);
-            
 
             // Apply specific button styling based on functionality
             if (Arrays.asList(topSymbols).contains(buttonValue)) {
@@ -116,7 +115,7 @@ public class Calculator {
                     if (Arrays.asList(rightSymbols).contains(buttonValue)) {
                         // Right Side Symbols: Operators & Equal
                         if (buttonValue.equals("=")) {
-                            if (a != null) {
+                            if (a != null && operator != null) {
                                 b = displayLabel.getText();
                                 double numA = Double.parseDouble(a);
                                 double numB = Double.parseDouble(b);
@@ -160,7 +159,10 @@ public class Calculator {
                             if (!displayLabel.getText().contains(buttonValue)) {
                                 displayLabel.setText(displayLabel.getText() + buttonValue);
                             } //If the current display label doesn't have a decimal place, one can be added. 
-                        else if ("0123456789".contains(buttonValue)) {
+                        } else if (buttonValue.equals("√")) {
+                            double numDisplay = Double.parseDouble(displayLabel.getText());
+                            displayLabel.setText(removeZeroDecimal(Math.sqrt(numDisplay)));
+                        } else if ("0123456789".contains(buttonValue)) {
                             if (displayLabel.getText().equals("0")) {
                                 displayLabel.setText(buttonValue);
                             } //The makes it so pressing a number at default label of "0", you get the number desired no "0" then the number pressed.
@@ -169,39 +171,29 @@ public class Calculator {
                             }
                         }
                     }
-                });
-            }
-            frame.setVisible(true); // Made visible after adding all components to fix render artifacts
+                }
+            });
         }
+        frame.setVisible(true); // Made visible after adding all components to fix render artifacts
+    }
 
-        void clearAll() {
-
+    void clearAll() {
         a = "0";
-
         operator = null;
-
         b = null;
-
         displayLabel.setText("0");
-
     }
 
     String removeZeroDecimal(double numDisplay) {
-
         if (numDisplay % 1 == 0) {
-
             return Integer.toString((int) numDisplay);
-
-        } 
-
-        else {
-
+        } else {
             return Double.toString(numDisplay);
-
         }
-
     }
 
+    public static void main(String[] args) {
+        new Calculator();
+    }
 } // closes class Calculator 
-            //Source:https://youtu.be/jQo6n-i6wpo?is=lGaybv5gFnrdi2wj
-
+//Source:https://youtu.be/jQo6n-i6wpo?is=lGaybv5gFnrdi2wj
