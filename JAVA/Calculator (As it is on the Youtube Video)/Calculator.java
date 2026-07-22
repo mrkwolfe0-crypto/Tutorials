@@ -142,7 +142,7 @@ public class Calculator {
                     } 
                     else if (Arrays.asList(topSymbols).contains(buttonValue)) {
                         // Top Symbols: AC, +/-, %
-                        if (buttonValue=="AC") {
+                        if (buttonValue.equals("AC")) {
                             clearAll();
                             displayLabel.setText("0");
                         } else if (buttonValue.equals("+/-")) {
