@@ -27,10 +27,10 @@ public class Calculator {
         "4", "5", "6", "-",
         "1", "2", "3", "+",
         "0", ".", "√", "="
-    };
+    }; //He left us to do the square root operator.
 
-    String[] rightSymbols = {"÷", "×", "-", "+", "="};
-    String[] topSymbols = {"AC", "+/-", "%"};
+    String[] rightSymbols = {"÷", "×", "-", "+", "="}; //Operators
+    String[] topSymbols = {"AC", "+/-", "%"}; //AC, +/-, %
 
     // Variables to track calculation state
     String a = "0";
@@ -55,21 +55,25 @@ public class Calculator {
         displayLabel.setOpaque(true);
 
         displayPanel.setLayout(new BorderLayout());
-        displayPanel.add(displayLabel);
-        frame.add(displayPanel, BorderLayout.NORTH);
+        displayPanel.add(displayLabel); //Put the text label in the panel
+        frame.add(displayPanel, BorderLayout.NORTH);//Puts the panel in window
 
         // Buttons Grid Layout
         buttonsPanel.setLayout(new GridLayout(5, 4));
         buttonsPanel.setBackground(customBlack);
+        frame.add(buttonsPanel);
 
+        //For loop.
         for (int i = 0; i < buttonValues.length; i++) {
             JButton button = new JButton();
             String buttonValue = buttonValues[i];
 
             button.setFont(new Font("Arial", Font.PLAIN, 30));
             button.setText(buttonValue);
-            button.setFocusable(false);
-            button.setBorder(new LineBorder(customBlack));
+            button.setFocusable(false); //Removes the square around the values in the button.
+            button.setBorder(new LineBorder(customBlack)); //Border around the buttons.
+            buttonsPanel.add(button);
+            
 
             // Apply specific button styling based on functionality
             if (Arrays.asList(topSymbols).contains(buttonValue)) {
@@ -83,13 +87,12 @@ public class Calculator {
                 button.setForeground(Color.white);
             }
 
-            buttonsPanel.add(button);
-
             // Click handling event listener
             button.addActionListener(new ActionListener() {
+                //Listening for the mouse click and e refers to the action.
                 public void actionPerformed(ActionEvent e) {
-                    JButton button = (JButton) e.getSource();
-                    String buttonValue = button.getText();
+                    JButton button = (JButton) e.getSource(); //e is the action event, source is where that event comes from.
+                    String buttonValue = button.getText(); //Checks the button clicked on.
 
                     if (Arrays.asList(rightSymbols).contains(buttonValue)) {
                         // Right Side Symbols: Operators & Equal
