@@ -142,8 +142,9 @@ public class Calculator {
                     } 
                     else if (Arrays.asList(topSymbols).contains(buttonValue)) {
                         // Top Symbols: AC, +/-, %
-                        if (buttonValue.equals("AC")) {
+                        if (buttonValue=="AC") {
                             clearAll();
+                            displayLabel.setText("0");
                         } else if (buttonValue.equals("+/-")) {
                             double numDisplay = Double.parseDouble(displayLabel.getText());
                             numDisplay *= -1;
@@ -181,9 +182,9 @@ public class Calculator {
         a = "0";
         operator = null;
         b = null;
-        displayLabel.setText("0");
+        //displayLabel.setText("0"); This code is removed because its auto clearing anything you press, not allowing a to be assigned to let the user select an operator. It is probaly the python logic #label["text"] = "0" that also tripped me up.
     }
-
+//This is like the function in the python calculator def check_zero_decimal(num):
     String removeZeroDecimal(double numDisplay) {
         if (numDisplay % 1 == 0) {
             return Integer.toString((int) numDisplay);
