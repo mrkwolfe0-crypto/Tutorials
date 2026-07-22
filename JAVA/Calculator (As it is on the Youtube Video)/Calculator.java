@@ -362,24 +362,22 @@ public class Calculator {
             }
             frame.setVisible(true); // Made visible after adding all components to fix render artifacts
         }
-
-        void clearAll() {
-            a = "0";
-            operator = null;
-            b = null;
-            displayLabel.setText("0");
-        }
-
-    String removeZeroDecimal(double numDisplay) {
-        if (numDisplay % 1 == 0) {
-            return Integer.toString((int) numDisplay);
-    } else {
-            return Double.toString(numDisplay);
-        }
     }
-} else {
-    return Double.toString(numDisplay);
 }
-        }
+
+void clearAll() {
+    a = "0";
+    operator = null;
+    b = null;
+    displayLabel.setText("0");
+}
+
+String removeZeroDecimal(double numDisplay) {
+    if (numDisplay % 1 == 0) {
+        return Integer.toString((int) numDisplay);
+    } else {
+        return Double.toString(numDisplay);
     }
+}
+
 }
