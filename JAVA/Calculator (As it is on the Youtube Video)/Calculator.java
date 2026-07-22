@@ -24,7 +24,7 @@ public class Calculator {
     //Type a square root symbol (√) on a Mac by pressing Option + V. On Windows, hold Alt and press 2, 5, 1 on your numeric keypad, or use the Emoji menu
     String[] buttonValues = {
         "AC", "+/-", "%", "/",
-        "7", "8", "9", "x",
+        "7", "8", "9", "*",
         "4", "5", "6", "-",
         "1", "2", "3", "+",
         "0", ".", "√", "="
@@ -126,9 +126,9 @@ public class Calculator {
                                     displayLabel.setText(removeZeroDecimal(numA + numB));
                                 } else if (operator.equals("-")) {
                                     displayLabel.setText(removeZeroDecimal(numA - numB));
-                                } else if (operator.equals("×")) {
+                                } else if (operator.equals("*")) {
                                     displayLabel.setText(removeZeroDecimal(numA * numB));
-                                } else if (operator.equals("÷")) {
+                                } else if (operator.equals("\")) {
                                     displayLabel.setText(removeZeroDecimal(numA / numB));
                                 }
                                 clearAll();
