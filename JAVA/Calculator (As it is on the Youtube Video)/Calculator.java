@@ -2,34 +2,37 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Arrays;
 import javax.swing.*;
-import javax.swing.border.LineBorder;
+import javax.swing.border.LineBorder; //for modifying the border of the buttons of the calculator
 
 public class Calculator {
+     //This is for the window, the creator often names his window board
     int boardWidth = 360;
     int boardHeight = 540;
 
-    JFrame frame = new JFrame("Calculator");
-
-    // Colors mimicking the iPhone calculator palette
+    //These are the default colors of how a calculator is presented in Mac Operating system.
     Color customLightGray = new Color(212, 212, 210);
-    Color customDarkGray = new Color(80, 80, 80);
-    Color customBlack = new Color(28, 28, 28);
-    Color customOrange = new Color(255, 149, 0);
+    Color customDarkGray = new Color(82,80,80);
+    Color customBlack = new Color(28,28,28);
+    Color customOrange = new Color(255,149,0);
 
     JLabel displayLabel = new JLabel();
     JPanel displayPanel = new JPanel();
     JPanel buttonsPanel = new JPanel();
 
-    // UI Buttons Array, 
+    //This section creates the layout and buttons akin to how the Pyhton calculator displayed its buttons.
+    //Type a square root symbol (√) on a Mac by pressing Option + V. On Windows, hold Alt and press 2, 5, 1 on your numeric keypad, or use the Emoji menu
     String[] buttonValues = {
-        "AC", "+/-", "%", "÷",
-        "7", "8", "9", "×",
+        "AC", "+/-", "%", "/",
+        "7", "8", "9", "x",
         "4", "5", "6", "-",
         "1", "2", "3", "+",
         "0", ".", "√", "="
-    }; //He left us to do the square root operator.
+    };
 
-    String[] rightSymbols = {"÷", "×", "-", "+", "="}; //Operators
+    //Plays out just like the python variant but instead of using [] to define the associated symbols it is assigned a string where from my understanding string in Python is assumed, and the symbols are contained in the {} in Java vs Python with []. Is {} doing for Java what [] does for Python and define lists?
+    //From a functional standpoint,both ⁠{}⁠ in this specific Java context and ⁠[]⁠ in Python serve the exact same primary purpose for a programmer: they let you create a collection of items all at once in a single line of code.
+    //FIXED: Added "+" to rightSymbols so addition works properly
+    String[] rightSymbols = {"/", "x", "-", "+", "="};
     String[] topSymbols = {"AC", "+/-", "%"}; //AC, +/-, %
 
     // Variables to track calculation state
