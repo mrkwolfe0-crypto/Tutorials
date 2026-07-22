@@ -121,7 +121,8 @@ public class Calculator {
                             }
                             operator = buttonValue;
                         }
-                    } else if (Arrays.asList(topSymbols).contains(buttonValue)) {
+                    } 
+                    else if (Arrays.asList(topSymbols).contains(buttonValue)) {
                         // Top Symbols: AC, +/-, %
                         if (buttonValue.equals("AC")) {
                             clearAll();
@@ -134,22 +135,23 @@ public class Calculator {
                             numDisplay /= 100;
                             displayLabel.setText(removeZeroDecimal(numDisplay));
                         }
-                    } else {
-                        // Digits and Decimal Symbol
+                    } 
+                    else {// Digits and Decimal Symbol
                         if (buttonValue.equals(".")) {
                             if (!displayLabel.getText().contains(buttonValue)) {
                                 displayLabel.setText(displayLabel.getText() + buttonValue);
                             }
-                        } else if ("0123456789".contains(buttonValue)) {
-                            if (displayLabel.getText().equals("0")) {
-                                displayLabel.setText(buttonValue);
-                            } else {
-                                displayLabel.setText(displayLabel.getText() + buttonValue);
+                            else if ("0123456789".contains(buttonValue)) {
+                                if (displayLabel.getText().equals("0")) {
+                                    displayLabel.setText(buttonValue);
+                                } 
+                                else {
+                                    displayLabel.setText(displayLabel.getText() + buttonValue);
+                                }
                             }
                         }
                     }
-                }
-            });
+                });
         }
 
         frame.add(buttonsPanel);
