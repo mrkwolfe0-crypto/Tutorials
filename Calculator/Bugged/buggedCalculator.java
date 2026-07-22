@@ -4,7 +4,7 @@ import java.util.Arrays;
 import javax.swing.*;
 import javax.swing.border.LineBorder; //for modifying the border of the buttons of the calculator
 
-public class Calculator {
+public class buggedCalculator {
      //This is for the window, the creator often names his window board
     int boardWidth = 360;
     int boardHeight = 540;
@@ -60,7 +60,7 @@ public class Calculator {
 
 
     //Constructor, the layout and panel configurations.
-    Calculator() {
+    buggedCalculator() {
         frame.setVisible(true);
         frame.setSize(boardWidth, boardHeight);
         frame.setLocationRelativeTo(null);
