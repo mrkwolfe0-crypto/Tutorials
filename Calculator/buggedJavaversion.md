@@ -1,11 +1,13 @@
+This is my original attempt. i made ibvious errors and eome changes. The final committed version will be fixed and operational. 
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Arrays;
 import javax.swing.*;
 import javax.swing.border.LineBorder; //for modifying the border of the buttons of the calculator
 
+//This is for the window, the creator often names his window board
 public class Calculator {
-     //This is for the window, the creator often names his window board
     int boardWidth = 360;
     int boardHeight = 540;
 
