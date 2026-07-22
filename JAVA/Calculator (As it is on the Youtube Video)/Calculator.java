@@ -56,7 +56,7 @@ public class Calculator {
     String a = "0";
     String operator = null;
     String b = null;
-
+    JFrame frame = new JFrame("Calculator");
     public Calculator() {
         // Layout and panels configuration
         frame.setVisibility(true);
