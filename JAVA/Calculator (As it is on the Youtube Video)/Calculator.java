@@ -39,6 +39,7 @@ public class Calculator {
 
     public Calculator() {
         // Layout and panels configuration
+        frame.setVisibility(true);
         frame.setSize(boardWidth, boardHeight);
         frame.setLocationRelativeTo(null); // Center window
         frame.setResizable(false);
