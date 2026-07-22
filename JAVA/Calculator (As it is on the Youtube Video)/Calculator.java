@@ -175,15 +175,33 @@ public class Calculator {
         }
 
         void clearAll() {
-            a = "0";
-            operator = null;
-            b = null;
-            displayLabel.setText("0");
-        }
+
+        a = "0";
+
+        operator = null;
+
+        b = null;
+
+        displayLabel.setText("0");
+
+    }
 
     String removeZeroDecimal(double numDisplay) {
+
         if (numDisplay % 1 == 0) {
+
             return Integer.toString((int) numDisplay);
-            } 
+
+        } 
+
+        else {
+
+            return Double.toString(numDisplay);
+
+        }
+
+    }
+
+} // closes class Calculator 
             //Source:https://youtu.be/jQo6n-i6wpo?is=lGaybv5gFnrdi2wj
 
