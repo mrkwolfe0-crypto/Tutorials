@@ -23,7 +23,7 @@ public class Calculator {
     //This section creates the layout and buttons akin to how the Pyhton calculator displayed its buttons.
     //Type a square root symbol (√) on a Mac by pressing Option + V. On Windows, hold Alt and press 2, 5, 1 on your numeric keypad, or use the Emoji menu
     String[] buttonValues = {
-        "AC", "+/-", "%", "/",
+        "AC", "+/-", "%", "\",
         "7", "8", "9", "*",
         "4", "5", "6", "-",
         "1", "2", "3", "+",
