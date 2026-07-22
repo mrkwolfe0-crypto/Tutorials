@@ -33,7 +33,7 @@ public class Calculator {
     //Plays out just like the python variant but instead of using [] to define the associated symbols it is assigned a string where from my understanding string in Python is assumed, and the symbols are contained in the {} in Java vs Python with []. Is {} doing for Java what [] does for Python and define lists?
     //From a functional standpoint,both ⁠{}⁠ in this specific Java context and ⁠[]⁠ in Python serve the exact same primary purpose for a programmer: they let you create a collection of items all at once in a single line of code.
     //FIXED: Added "+" to rightSymbols so addition works properly
-    String[] rightSymbols = {"/", "x", "-", "+", "="};
+    String[] rightSymbols = {"/", "*", "-", "+", "="};
     String[] topSymbols = {"AC", "+/-", "%"}; //AC, +/-, %
 
     //Creates the window
@@ -162,20 +162,17 @@ public class Calculator {
                             if (!displayLabel.getText().contains(buttonValue)) {
                                 displayLabel.setText(displayLabel.getText() + buttonValue);
                             } //If the current display label doesn't have a decimal place, one can be added. 
-                            else if ("0123456789".contains(buttonValue)) {
-                                if (displayLabel.getText().equals("0")) {
-                                    displayLabel.setText(buttonValue);
-                                } //The makes it so pressing a number at default label of "0", you get the number desired no "0" then the number pressed.
-                                else {
-                                    displayLabel.setText(displayLabel.getText() + buttonValue);
-                                }
+                        else if ("0123456789".contains(buttonValue)) {
+                            if (displayLabel.getText().equals("0")) {
+                                displayLabel.setText(buttonValue);
+                            } //The makes it so pressing a number at default label of "0", you get the number desired no "0" then the number pressed.
+                            else {
+                                displayLabel.setText(displayLabel.getText() + buttonValue);
                             }
                         }
                     }
                 });
             }
-
-            frame.add(buttonsPanel);
             frame.setVisible(true); // Made visible after adding all components to fix render artifacts
         }
 
