@@ -1,3 +1,5 @@
+This is my original attempt. i made ibvious errors and eome changes. The final committed version will be fixed and operational. 
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Arrays;
