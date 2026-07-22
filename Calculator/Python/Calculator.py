@@ -62,12 +62,14 @@ frame.pack()
 A=0
 operator= None
 B=None
+reset_next = False
 
 def clear_all():
-    global A, B, operator
+    global A, B, operator, reset_next
     A=0
     operator= None
     B=None
+    reset_next = False
     #label["text"] = "0"
 
 def check_zero_decimal(num):
@@ -87,7 +89,7 @@ def check_zero_decimal(num):
 
 
 def button_click(value):
-    global right_symbols, top_symbols, A, B, operator
+    global right_symbols, top_symbols, A, B, operator, reset_next
     if value in right_symbols:
         if value == "=":
             if A is not None and operator is not None:
@@ -101,37 +103,47 @@ def button_click(value):
                 elif operator == "*":
                     label["text"] = check_zero_decimal(numA * numB)
                 elif operator == "/":
-                    label["text"] = check_zero_decimal(numA / numB)
+                    if numB == 0:
+                        label["text"] = "Error"
+                    else:
+                        label["text"] = check_zero_decimal(numA / numB)
             clear_all()
+            reset_next = True
 
         elif value in "+-*/": 
-            if operator is None:
-                A = label["text"]
-                label["text"] = "0"
-                B = "0"
-                #This ensures after preesing anumber and then a operaton the pressing of another operation like division then addition means you changed the operation sought to be done. 
+            A = label["text"]
             operator = value
+            reset_next = True
+            #This ensures after preesing anumber and then a operaton the pressing of another operation like division then addition means you changed the operation sought to be done. 
+            
     elif value in top_symbols:
         if value == "AC":
             clear_all()
             label["text"] = "0"
             #At first I put this in the clear_all() function but then I realised that it would be better to have it here as it is more specific to the AC button. The clear_all() function is used to reset the values of A, B and operator to their default values. The label["text"] = "0" is used to reset the label to 0. Meaning it would reset the labels after pressing the operation desired where I wanted to perform the operator it cleared the entry.
         if value == "+/-":
-            #Take the text label convert it to a float, multiply by -1, convert it back to a string and set the label text to that value.
-            result = float(label["text"])*-1
-            label["text"] = check_zero_decimal(result)
+            if label["text"] != "Error":
+                #Take the text label convert it to a float, multiply by -1, convert it back to a string and set the label text to that value.
+                result = float(label["text"])*-1
+                label["text"] = check_zero_decimal(result)
         if value == "%":
-            result = float(label["text"])/100
-            label["text"] = check_zero_decimal(result)
+            if label["text"] != "Error":
+                result = float(label["text"])/100
+                label["text"] = check_zero_decimal(result)
     else: #This is for the numpad and decimal place button, square root button
+        if reset_next:
+            label["text"] = "0"
+            reset_next = False
+
         if value == ".":
-            if value not in label["text"]:
+            if "." not in label["text"]:
                 label["text"] += value
         elif value == "√":
-            result = float(label["text"])**0.5
-            label["text"] = check_zero_decimal(result)
+            if label["text"] != "Error":
+                result = float(label["text"])**0.5
+                label["text"] = check_zero_decimal(result)
         elif value in "0123456789":
-            if label["text"] == "0":
+            if label["text"] == "0" or label["text"] == "Error":
                 label["text"] = value #This replaces the 0 with the value of the button
             else:
                 label["text"] += value
