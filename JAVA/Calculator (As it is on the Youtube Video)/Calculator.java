@@ -146,11 +146,13 @@ public class Calculator {
                         // Top Symbols: AC, +/-, %
                         if (buttonValue.equals("AC")) {
                             clearAll();
-                        } else if (buttonValue.equals("+/-")) {
+                        } 
+                        else if (buttonValue.equals("+/-")) {
                             double numDisplay = Double.parseDouble(displayLabel.getText());
                             numDisplay *= -1;
                             displayLabel.setText(removeZeroDecimal(numDisplay));
-                        } else if (buttonValue.equals("%")) {
+                        } 
+                        else if (buttonValue.equals("%")) {
                             double numDisplay = Double.parseDouble(displayLabel.getText());
                             numDisplay /= 100;
                             displayLabel.setText(removeZeroDecimal(numDisplay));
@@ -160,11 +162,11 @@ public class Calculator {
                         if (buttonValue.equals(".")) {
                             if (!displayLabel.getText().contains(buttonValue)) {
                                 displayLabel.setText(displayLabel.getText() + buttonValue);
-                            }
+                            } //If the current display label doesn't have a decimal place, one can be added. 
                             else if ("0123456789".contains(buttonValue)) {
                                 if (displayLabel.getText().equals("0")) {
                                     displayLabel.setText(buttonValue);
-                                } 
+                                } //The makes it so pressing a number at default label of "0", you get the number desired no "0" then the number pressed.
                                 else {
                                     displayLabel.setText(displayLabel.getText() + buttonValue);
                                 }
