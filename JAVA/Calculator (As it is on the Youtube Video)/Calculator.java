@@ -27,7 +27,7 @@ public class Calculator {
         "4", "5", "6", "-",
         "1", "2", "3", "+",
         "0", ".", "√", "="
-    };
+    }; //He is leaving it up to us to make the square root function.
 
     //Plays out just like the python variant but instead of using [] to define the associated symbols it is assigned a string where from my understanding string in Python is assumed, and the symbols are contained in the {} in Java vs Python with []. Is {} doing for Java what [] does for Python and define lists?
     //From a functional standpoint,both ⁠{}⁠ in this specific Java context and ⁠[]⁠ in Python serve the exact same primary purpose for a programmer: they let you create a collection of items all at once in a single line of code.
