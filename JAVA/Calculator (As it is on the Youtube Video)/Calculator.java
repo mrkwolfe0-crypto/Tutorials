@@ -15,9 +15,9 @@ public class Calculator {
     Color customBlack = new Color(28,28,28);
     Color customOrange = new Color(255,149,0);
 
-    JLabel displayLabel = new JLabel();
+    /*JLabel displayLabel = new JLabel();
     JPanel displayPanel = new JPanel();
-    JPanel buttonsPanel = new JPanel();
+    JPanel buttonsPanel = new JPanel();*/
 
     //This section creates the layout and buttons akin to how the Pyhton calculator displayed its buttons.
     //Type a square root symbol (√) on a Mac by pressing Option + V. On Windows, hold Alt and press 2, 5, 1 on your numeric keypad, or use the Emoji menu
@@ -34,6 +34,11 @@ public class Calculator {
     //FIXED: Added "+" to rightSymbols so addition works properly
     String[] rightSymbols = {"/", "*", "-", "+", "="};
     String[] topSymbols = {"AC", "+/-", "%"}; //AC, +/-, %
+
+    JFrame frame = new JFrame("Calculator");
+    JLabel displayLabel = new JLabel();
+    JPanel displayPanel = new JPanel();
+    JPanel buttonsPanel = new JPanel();
 
     //Creates the window
     //This section are the variables to track and enable the calculation state.
@@ -55,32 +60,34 @@ public class Calculator {
     String a = "0";
     String operator = null;
     String b = null;
-    JFrame frame = new JFrame("Calculator");
+    
 
-    public Calculator() {
+    Calculator() {
         // Layout and panels configuration
+        frame.setVisible(true); // Made visible after adding all components to fix render artifacts
         frame.setSize(boardWidth, boardHeight);
         frame.setLocationRelativeTo(null); // Center window
-        frame.setResizable(false);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(false); //Avoids the graphical glitch of resizing as the size is set static not dynamically.
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //The X button to close the calculator.
         frame.setLayout(new BorderLayout());
 
         // Display configuration
         displayLabel.setBackground(customBlack);
         displayLabel.setForeground(Color.white);
         displayLabel.setFont(new Font("Arial", Font.PLAIN, 80));
-        displayLabel.setHorizontalAlignment(JLabel.RIGHT);
+        displayLabel.setHorizontalAlignment(JLabel.RIGHT); //Puts zero in the label area to the right and not default center.
         displayLabel.setText("0");
         displayLabel.setOpaque(true);
 
         displayPanel.setLayout(new BorderLayout());
         displayPanel.add(displayLabel); //Put the text label in the panel
-        frame.add(displayPanel, BorderLayout.NORTH);//Puts the panel in window
+        frame.add(displayPanel, BorderLayout.NORTH);//Puts the label area to the top of the calculator window.
 
         // Buttons Grid Layout
         buttonsPanel.setLayout(new GridLayout(5, 4));
         buttonsPanel.setBackground(customBlack);
         frame.add(buttonsPanel);
+        
 
         //For loop.
         for (int i = 0; i < buttonValues.length; i++) {
@@ -91,20 +98,23 @@ public class Calculator {
             button.setText(buttonValue);
             button.setFocusable(false); //Removes the square around the values in the button.
             button.setBorder(new LineBorder(customBlack)); //Border around the buttons.
-            buttonsPanel.add(button);
+            /*frame.add(buttonsPanel);
+            buttonsPanel.add(button);*/
 
             // Apply specific button styling based on functionality
             if (Arrays.asList(topSymbols).contains(buttonValue)) {
                 button.setBackground(customLightGray);
                 button.setForeground(customBlack);
-            } else if (Arrays.asList(rightSymbols).contains(buttonValue)) {
+            } 
+            else if (Arrays.asList(rightSymbols).contains(buttonValue)) {
                 button.setBackground(customOrange);
                 button.setForeground(Color.white);
-            } else {
+            } 
+            else {
                 button.setBackground(customDarkGray);
                 button.setForeground(Color.white);
             }
-
+            buttonsPanel.add(button);
             // Click handling event listener
             button.addActionListener(new ActionListener() {
                 //Listening for the mouse click and e refers to the action.
@@ -131,7 +141,8 @@ public class Calculator {
                                 }
                                 clearAll();
                             }
-                        } else {
+                        } 
+                        else if ("+-*/".contains(buttonValue)) {
                             if (operator == null) {
                                 a = displayLabel.getText();
                                 displayLabel.setText("0");
@@ -145,11 +156,13 @@ public class Calculator {
                         if (buttonValue.equals("AC")) {
                             clearAll();
                             displayLabel.setText("0");
-                        } else if (buttonValue.equals("+/-")) {
+                        } 
+                        else if (buttonValue.equals("+/-")) {
                             double numDisplay = Double.parseDouble(displayLabel.getText());
                             numDisplay *= -1;
                             displayLabel.setText(removeZeroDecimal(numDisplay));
-                        } else if (buttonValue.equals("%")) {
+                        } 
+                        else if (buttonValue.equals("%")) {
                             double numDisplay = Double.parseDouble(displayLabel.getText());
                             numDisplay /= 100;
                             displayLabel.setText(removeZeroDecimal(numDisplay));
@@ -160,10 +173,12 @@ public class Calculator {
                             if (!displayLabel.getText().contains(buttonValue)) {
                                 displayLabel.setText(displayLabel.getText() + buttonValue);
                             } //If the current display label doesn't have a decimal place, one can be added. 
-                        } else if (buttonValue.equals("√")) {
+                        } 
+                        else if (buttonValue.equals("√")) {
                             double numDisplay = Double.parseDouble(displayLabel.getText());
                             displayLabel.setText(removeZeroDecimal(Math.sqrt(numDisplay)));
-                        } else if ("0123456789".contains(buttonValue)) {
+                        } //This is the square root being assigned to a variable and allowing the unitary action of square root, like how the Python variant operated like.
+                        else if ("0123456789".contains(buttonValue)) {
                             if (displayLabel.getText().equals("0")) {
                                 displayLabel.setText(buttonValue);
                             } //The makes it so pressing a number at default label of "0", you get the number desired no "0" then the number pressed.
@@ -174,10 +189,10 @@ public class Calculator {
                     }
                 }
             });
+            frame.setVisible(true);
         }
-        frame.setVisible(true); // Made visible after adding all components to fix render artifacts
+        
     }
-
     void clearAll() {
         a = "0";
         operator = null;
@@ -188,13 +203,10 @@ public class Calculator {
     String removeZeroDecimal(double numDisplay) {
         if (numDisplay % 1 == 0) {
             return Integer.toString((int) numDisplay);
-        } else {
-            return Double.toString(numDisplay);
         }
+        return Double.toString(numDisplay);
     }
+}
 
-    public static void main(String[] args) {
-        new Calculator();
-    }
-} // closes class Calculator 
+// closes class Calculator 
 //Source:https://youtu.be/jQo6n-i6wpo?is=lGaybv5gFnrdi2wj
