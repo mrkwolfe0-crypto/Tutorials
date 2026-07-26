@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Wolfe | Developer Portfolio</title>
+    <!-- 📄 Link your external style file -->
+    <link rel="stylesheet" href="oldstyle.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header / Navigation Bar -->
+        <header class="navbar">
+            <div class="logo">Mark Wolfe</div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Intro Section -->
+        <section id="about" class="hero-section">
+            <h1>Hi, I'm <span class="highlight">Mark</span>.</h1>
+            <p>Software developer focused on clean architectural design and automation.</p>
+        </section>
+
+        <!-- Dynamic Projects Section -->
+        <section id="projects" class="projects-section">
+            <h2>Featured Projects</h2>
+            
+            <!-- 🎯 The target hook container where JavaScript will drop cards -->
+            <div class="project-grid" id="dynamic-project-grid">
+                <p class="loading-text">Fetching production repositories from GitHub...</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- ⚙️ Link your external JavaScript file at the end of the body -->
+    <script src="oldapp.js"></script>
+</body>
+</html>
