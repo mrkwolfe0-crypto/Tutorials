@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Website</title>
+  
+  <!-- Boxicons CDN -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#home" class="logo"><span>Code</span>WithMe</a>
+    
+    <ul class="links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <i class="bx bx-menu" id="menu"></i>
+
+    <a href="#contact" class="btn">Contact</a>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home">
+    <img src="images/profile.png" alt="Profile Picture">
+    
+    <div class="infobox">
+      <h1>Hi, I'm <span>Alex</span></h1>
+      <h3><span>Web Developer</span></h3>
+      <p>Passionate about building responsive, modern, and user-friendly web applications.</p>
+    </div>
+
+    <div class="button-box">
+      <a href="#contact" class="btn">Hire Me</a>
+      <a href="#about" class="btn">Learn More</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about-box">
+      <div class="about-info">
+        <h1>About <span>Me</span></h1>
+        <p>I am a front-end developer focused on creating smooth visual experiences and responsive interfaces.</p>
+      </div>
+
+      <h2><span>Skills</span></h2>
+
+      <div class="skills">
+        <ul>
+          <li><span>HTML <i class="bx bx-right-arrow-alt"></i></span></li>
+          <li><span>CSS <i class="bx bx-right-arrow-alt"></i></span></li>
+          <li><span>JavaScript <i class="bx bx-right-arrow-alt"></i></span></li>
+        </ul>
+        <ul>
+          <li><span>React <i class="bx bx-right-arrow-alt"></i></span></li>
+          <li><span>Node <i class="bx bx-right-arrow-alt"></i></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <img src="images/about.png" alt="About Image">
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h1 class="header">My <span>Services</span></h1>
+
+    <div class="services-container">
+      <div class="box">
+        <h1><span>Web Design</span></h1>
+        <p>Clean, modern, and modern-looking user interface layouts.</p>
+        <img src="images/service1.png" alt="Web Design">
+      </div>
+
+      <div class="box">
+        <h1><span>Development</span></h1>
+        <p>Responsive, semantic, and performant web apps built with precision.</p>
+        <img src="images/service2.png" alt="Development">
+      </div>
+
+      <div class="box">
+        <h1><span>UI/UX</span></h1>
+        <p>User-centered designs optimized for intuitive interactive experiences.</p>
+        <img src="images/service3.png" alt="UI/UX">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h1 class="header">Contact <span>Me</span></h1>
+
+    <form action="#">
+      <div class="input-box">
+        <span>Full Name</span>
+        <input type="text" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="input-box">
+        <span>Your Email</span>
+        <input type="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="input-box">
+        <span>Your Message</span>
+        <input type="text" placeholder="Enter your message" required>
+      </div>
+
+      <button type="submit" class="btn submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="column-left">
+      <div class="column-box">
+        <span><i class="bx bx-map"></i></span>
+        <span>New York, USA</span>
+      </div>
+      <div class="column-box">
+        <span><i class="bx bx-phone"></i></span>
+        <span>+1 234 567 890</span>
+      </div>
+      <div class="column-box">
+        <span><i class="bx bx-envelope"></i></span>
+        <span>info@example.com</span>
+      </div>
+    </div>
+
+    <div class="column-right">
+      <span>About my services</span>
+      <p>Providing high-quality modern web development and design solutions.</p>
+      
+      <div class="social-icons">
+        <a href="#"><i class="bx bxl-facebook"></i></a>
+        <a href="#"><i class="bx bxl-twitter"></i></a>
+        <a href="#"><i class="bx bxl-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
