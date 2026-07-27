@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Website</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Boxicons CDN -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <!--Navigation bar-->
+    <nav>
+        <!--<span></span> gives the Logo text a gradiant effect.-->
+        <!--This will be set to the left.-->
+        <a href="#" class="logo"><span>Linda</span></a>
+        <!--ul = unordered list-->
+        <!--This will be centered-->
+        <ul class="links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </ul>
+        <!--Contact button to the right-->
+        <i class="bx bx-menu" id="menu"></i>
+
+        <!--CTA Button-->
+        <a href="#contact" class="btn">Contact Me</a>
+
+    </nav> <!--This sets the navigation bar-->
+    <!-- Home Section -->
+  <section id="home">
+    <img src="images/profile.png" alt="Profile Picture">
+    
+    <div class="infobox">
+      <h1>Hi, I'm <span>Linda</span></h1>
+      <h3><span>Web Developer</span></h3>
+      <p>Passionate about building responsive, modern, and user-friendly web applications.</p>
+    </div>
+
+    <div class="button-box">
+      <a href="#contact" class="btn">Hire Me</a>
+      <a href="#about" class="btn">Learn More</a>
+    </div>
+  </section>
+    <!--In his video he has js named script, I am used to app.js so I named it accordingly.-->
+    <script src="app.js"></script>
+  </body>
+</html>
