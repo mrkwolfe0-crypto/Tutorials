@@ -1,6 +1,14 @@
-I like the direction, but I would make one important change.
+Why this portfolio exists
 
-This is your **Tutorials** repository, so the README should explain **what you learned**, not just present the finished code. Since your coding journals are all about understanding *why* things work, I'd organize it like this:
+I originally wanted a portfolio because the drag-and-drop builders I tried, such as Canva, felt restrictive. I wanted something that reflected how I learn and build software.
+
+My first version was a basic GitHub portfolio that dynamically displayed my repositories. Although I eventually corrected bugs caused by outdated code and debugging mistakes, it still felt clinical.
+
+While working on other projects, including a glassmorphism login/register page and two calculator applications, I realized I had already learned several techniques that could be reused. Rather than copying another tutorial, I began integrating ideas from projects I had already completed.
+
+The final portfolio combines a responsive portfolio layout, state management adapted from my login/register project, a live Google Docs résumé to avoid maintaining duplicate copies, and the original GitHub repository feed that inspired the project in the first place.
+
+My goal wasn't simply to build a portfolio. It was to build something that demonstrated how I learn: research, experiment, make mistakes, debug them, understand why they happened, and then reuse those lessons in future projects.
 
 ---
 
