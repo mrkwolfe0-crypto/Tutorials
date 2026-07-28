@@ -75,3 +75,98 @@ nav ul a:hover{
     opacity: 1;
 }
 /*Stopped at 9:30 https://www.youtube.com/watch?v=GnFH9Eg-OuM&list=PL4FL-XepWXttYviyLh0yEiNOhAj_qCYs4&index=2*/
+
+.btn {
+    padding: 0.5em;
+    color: white;
+    font-weight:500;
+    letter-spacing: 1px;
+    border-radius: 0.5em;
+    font-size: 1.1em;
+    border: 2px solid white;
+    cursor: pointer; /*Indicates that the button is clickable when hovering over the button.*/
+    transition: 0.3s ease-in-out;
+}
+.btn:hover{
+    background-color: white;
+    color:var(--background);
+}
+/*Setting the <span></span> setting to create the gradiant text effect*/
+/*This is a linear gradiant function = linear-gradiant being set to go to the right.*/
+span{
+    background: linear-gradient(to right, #6cff52, #3ec5ff);
+    background-clip: text; /*To clip the text to the background*/
+    color: transparent; /*Makes the text transparent*/
+
+}
+#menu{
+    color:white;
+    font-size:3em;
+    display: none;
+}
+
+/*Styling the home section*/
+section{
+    min-height: 100vh;
+    padding: 5% 15%; /*5% padding on top and bottom, 15% padding on the sides*/
+
+}
+#home{
+    display: flex;
+    flex-direction: column; /*Makes it where all of the home section centers and stacks on each other, the image followed by the text*/
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    color: white; /*Why not have a global color for text color have it be white and then insert the var(--text color) he already had us do var inserts*/
+
+}
+
+/*Modifying the image size*/
+#home img{
+    width: 18vw; /*18% of the view port width*/
+    border-radius: 50%; /*Makes the image circular when it is by default a square.*/
+    margin-top: 3em;
+}
+.info-box{
+    display: flex;
+    flex-direction: column;/*Brings the text ontop of each other.*/
+    text-align: center;
+    gap: 0.5em;
+    max-width: 600px;/*Aids in the responsiveness as well*/
+}
+.info-box h1{
+    font-size: 5em;
+    font-weight: 500;
+
+}
+.info-box h3{
+    font-size: 2em;
+    font-weight:400;
+}
+.info-box p{
+    opacity: 0.7;
+}
+.btn-box{
+    display: flex;
+    gap: 1em;
+}
+.btn-box .btn:nth-of-type(2){
+    background-color: white;
+    color: var(--background);
+}
+.btn-box .btn:nth-of-type(2):hover{
+    background-color: var(--background);
+    color: white;
+}
+/*Styling of the home section ends*/
+
+/*Styling the scroll bar*/
+::-webkit-scrollbar{
+    width:20px;
+    background-color: var(--background);
+
+}
+::webkit-scrollbar-thumb{
+    background: linear-gradient(to bottom, #6cff52, #3ec5ff);
+}
+/*Styling the scroll bar, ends*/
