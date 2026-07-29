@@ -105,7 +105,7 @@ span{
     display: none;
 }
 
-/*Styling the home section*/
+/*Styling of the home section*/
 section{
     min-height: 100vh;
     padding: 5% 15%; /*5% padding on top and bottom, 15% padding on the sides*/
@@ -120,7 +120,6 @@ section{
     color: white; /*Why not have a global color for text color have it be white and then insert the var(--text color) he already had us do var inserts*/
 
 }
-
 /*Modifying the image size*/
 #home img{
     width: 18vw; /*18% of the view port width*/
@@ -158,7 +157,7 @@ section{
     background-color: var(--background);
     color: white;
 }
-/*Styling of the home section ends*/
+/*Styling of the home section*/
 
 /*Styling the scroll bar*/
 ::-webkit-scrollbar{
@@ -169,4 +168,119 @@ section{
 ::webkit-scrollbar-thumb{
     background: linear-gradient(to bottom, #6cff52, #3ec5ff);
 }
-/*Styling the scroll bar, ends*/
+/*Styling the scroll bar*/
+
+/*Styling for the About section*/
+#about{
+    background-color: var(--background);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:5em;
+}
+#about img{
+    width: 30vw;
+    border-radius: 1em;
+}/*Modifies the image in the bottom of the about section.*/
+.about{
+    display:flex;
+    flex-direction: column;
+    text-align:left;
+    gap: 2em;
+}
+.about-box h1{
+    font-size: 5em;
+}
+.about-box p{
+    color: white;
+    opacity:0.8;
+}
+/*Styling for the About section*/
+
+/*SKills*/
+.skills{
+    display: flex;
+    text-align: left;
+    gap: 10em;
+}
+.skills ul{
+    font-size: 1.3em;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    opacity: 0.8;
+    align-items: baseline; /*Perfectly align the items on the left.*/
+}
+.skill ul li span{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-weight: 1.3em;
+    transition: 0.3 ease-in-out;
+} /*Give space between the text and the boxicon.*/
+.skills ul li:hover{
+    transform: translatex(10px); /*Hovering over the skills causes it to shift over to the right a little.*/
+
+}
+.skills ul li{
+    font-weight: 1.2em;
+}
+.about-box h2{
+    font-size: 2.5em
+}
+/*SKills*/
+/*Services*/
+#services{
+    background-color: var(--background);
+}
+.header{
+    align-content: center;
+    font-size: 5em;
+    margin: 0.5em 0;
+
+}
+.services-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+
+}
+.box{
+    border: 3px solid rgb(49,49,49);
+    border-radius:0.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    object-fit:cover;
+    padding: 3em;
+    gap: 2em;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+
+}
+.box:hover{
+    border: 3px solid rgb(100,100,100);
+
+}
+.box p{
+    opacity: 0.8;
+
+}
+.box h1{
+    font-size: 2em;
+
+}
+/*.box img{
+    min-width: 25px;
+    border-radius: 0.5em;
+}*/
+.box img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5em;
+}
+/*Encountering a bug the tiles are not columnizing and zooming out to 20% mimics how they appear in the tutorial.*/
+/*Services*/
