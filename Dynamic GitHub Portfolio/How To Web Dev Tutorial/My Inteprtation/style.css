@@ -284,3 +284,114 @@ section{
 }
 /*Encountering a bug the tiles are not columnizing and zooming out to 20% mimics how they appear in the tutorial.*/
 /*Services*/
+
+/*Contact*/
+#contact {
+    background-color: var(--second-background);
+
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+
+}
+form .input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline; /*Keeps it default aligned to the left*/
+    gap: 1em;
+}
+.input-box span{
+    font-size: 1.5em;
+
+}
+font-input {
+    font-size: 1.3em;
+    padding: 1em 5em;
+    border-radius: 0.5em;
+    border: none;
+    outline: none;
+}
+form input:focus {
+    background: rgb(229,229,229);
+    /*Sets the background to this color when hovering over the text*/
+}
+/*Contact*/
+
+/*Footer*/
+/*
+When doing the tutorial I messed up and put a .footer where the YouTube video he did not infact put a period. I asked for an explainer on why I made a mistake as so far all calls to the html started with a .(class itme) 
+It all comes down to how CSS rules are written to tell the browser **what** on the page you're trying to style:
+
+1. **Tag Selectors (No Dot):** When you write `footer`, `div`, `h1`, or `p` without a period, you are telling the browser, *"Find every actual HTML element with this name."* Because your code used the `<footer >` tag, `footer` targets that structural element directly.
+2. **Class Selectors (With a Dot):** When you put a period in front of a word like `.footer`, `.col-left`, or `.btn`, the period acts as a prefix that tells CSS, *"Don't look for a tag; look for an element with `class="..."`."*
+
+When CSS saw `.footer` in your stylesheet, it went looking through your HTML for `<div class="footer">` or `<section class="footer">`. Because your HTML used `<footer>` without a `class="footer"` attribute attached to it, the browser couldn't find a match. It simply ignored all those flexbox rules, leaving your content unstyled and stuck on the left!
+
+Deleting that period stripped away the class filter, allowing CSS to apply the styling directly to your HTML `<footer>` tag.
+*/
+footer {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    /*Brings the column left and right into the center*/
+    gap: 10em;
+    bottom: 0; /*Ensures it stays at the bottom*/
+    background-color: var(--background);
+    width: 100%;
+    padding: 5em 15%;
+}
+.col-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+}
+.col-box {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+}
+.col-box i{
+    font-size: 2em; /*Increases the icon size*/
+
+}
+.col-box span {
+    font-size: 1.2em;
+
+}
+.col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    color: white;
+    max-width: 500px;
+}
+.col-right span {
+    font-size: 1.3em;
+}
+.col-box .social-icons {
+    display: flex;
+    align-items: baseline;
+    justify-content: left;
+    gap: 1em;
+}
+.col-right .social-icons i{
+    font-size: 2em;
+    transition: 0.2 ease-in-out;
+    cursor: pointer;
+
+}
+.social-icons i:hover {
+    color:white;
+    /*Sets the color of the icons when you hover over them*/
+
+}
+/*Footer*/
+/*Responsiveness settings from JavaScript*/
+/*Video stopped at */
+/*Responsiveness settings from JavaScript*/

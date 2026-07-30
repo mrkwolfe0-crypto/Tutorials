@@ -17,7 +17,7 @@ Personal Modifications:
 - Documented DOM interaction.
 -----------------------------------------------------
 */
-
+/*
 let menu = document.querySelector('#menu');
 let links = document.querySelector('.links');
 
@@ -25,3 +25,13 @@ menu.onclick = () => {
   menu.classList.toggle('bx-x');
   links.classList.toggle('active');
 };
+*/
+/*Responsive settings*/
+
+@MediaCapabilities(max-width:968px){
+
+}
+@MediaCapabilities(max-width:768px){
+
+}
+/*Responsiveness setting*/
