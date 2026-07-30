@@ -165,7 +165,7 @@ section{
     background-color: var(--background);
 
 }
-::webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb{
     background: linear-gradient(to bottom, #6cff52, #3ec5ff);
 }
 /*Styling the scroll bar*/
