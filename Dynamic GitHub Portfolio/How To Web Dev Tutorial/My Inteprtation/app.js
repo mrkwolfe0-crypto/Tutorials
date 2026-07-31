@@ -17,21 +17,13 @@ Personal Modifications:
 - Documented DOM interaction.
 -----------------------------------------------------
 */
-/*
-let menu = document.querySelector('#menu');
-let links = document.querySelector('.links');
 
+/*Drop down menu */
+const menu = document.querySelector('#menu');
+const nav = document.querySelector('.links');
 menu.onclick = () => {
   menu.classList.toggle('bx-x');
-  links.classList.toggle('active');
-};
-*/
-/*Responsive settings*/
+  nav.classList.toggle('active');
+} 
 
-@MediaCapabilities(max-width:968px){
-
-}
-@MediaCapabilities(max-width:768px){
-
-}
-/*Responsiveness setting*/
+/*Drop down menu */

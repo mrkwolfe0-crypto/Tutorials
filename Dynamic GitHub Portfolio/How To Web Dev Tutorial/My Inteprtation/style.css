@@ -397,7 +397,7 @@ footer {
     section{
         padding: 8em 15%;
     }
-    nav.btn{
+    nav .btn{
         display:none; /*Deletes the button on the header*/
     }
     #menu{
